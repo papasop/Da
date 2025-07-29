@@ -24,3 +24,4 @@ analytical = [1.5049 * x**1.5 for x in x_values]
 print("x\t数值结果\t解析结果\t误差")
 for x, num, ana in zip(x_values, numerical, analytical):
     print(f"{x:.2f}\t{num:.4f}\t{ana:.4f}\t{ana - num:.4f}")
+    print(f"Kα at x=0.11: {(log_H[1] - log_H[0]) / (log_Phi[1] - log_Phi[0]):.4f}")
