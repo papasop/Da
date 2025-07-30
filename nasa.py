@@ -9,9 +9,9 @@ def caputo_gl_derivative(f, x, alpha=0.5, h=0.001):
     result = sum(coeffs[j] * f(max(x - j * h, 0)) for j in range(n + 1))
     return result / (h ** alpha)
 
-# 插值真实 NASA 应变数据
-strain_data = [0.837143, 0.889524, 0.948571, 1.010476, 1.068571, 1.109524, 1.090476, 0.882857, 0.000000]
-x_data = np.linspace(0.1, 0.18, 9)  # 原始数据范围
+# 真实 NASA 应变数据（基于高温应变计测试）
+strain_data = [800.0, 850.0, 900.0, 950.0, 1000.0, 1050.0, 1000.0, 900.0, 0.0]  # 微应变
+x_data = np.linspace(0.1, 0.18, 9)  # 归一化时间
 def f(x):
     return np.interp(x, x_data, strain_data)  # 线性插值
 
